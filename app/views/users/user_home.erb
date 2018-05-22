@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Profile Page--<%=@user.username%></title>
+  <link rel="stylesheet" type="text/css" href="/.css/stylesheet.css">
+  <body>
+    <h1>Welcome Back, <%= @user.username %></h1>
+    <a href="/create_recipe">Make A Recipe</a>
+    <br><br>
+    <h2>Recipes</h2>
+    <% @user.meals.each do |recipe| %>
+      <a href="/recipe/<%=recipe.id%>">Recipe Name: <%=recipe.name %></a>
+      <br></br>
+      <% end %>
+      <br></br>
+  </body>
+</head>
+
+</html>

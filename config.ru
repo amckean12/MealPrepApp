@@ -5,4 +5,3 @@ use Rack::MethodOverride
 run ApplicationController
 use UserController
 use MealController
-use WeekController

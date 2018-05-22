@@ -15,7 +15,7 @@ class UserController < ApplicationController
       @user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
       @user.save
       session[:user_id] = @user.id
-      redirect '/meals'
+      redirect '/user_home'
     end
   end
 
@@ -24,10 +24,15 @@ class UserController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/meals'
+      redirect '/user_home'
     else
       redirect '/login'
     end
+  end
+
+  get '/user_home' do
+    @user = current_user
+    erb :"/users/user_home"
   end
 
 

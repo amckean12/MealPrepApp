@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Create Recipe--<%=@user.username%></title>
+  <link rel="stylesheet" type="text/css" href="/.css/stylesheet.css">
+  <body>
+    <form action="/recipe" method="POST">
+      <input type="text" name="name" placeholder="Meal Name:">
+      <br></br>
+      <input type="text" name="content" placeholder="Recipe:">
+      <br></br>
+      <input type="submit" value="Create Meal">
+    </form>
+  </body>
+</head>
+
+</html>
