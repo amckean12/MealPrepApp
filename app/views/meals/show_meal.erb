@@ -2,9 +2,14 @@
 <head>
   <title><%=@recipe.name%></title>
   <link rel="stylesheet" type="text/css" href="/.css/stylesheet.css">
+  </head>
   <body>
     <h1><%=@recipe.name%></h1>
+
+    <a href="/recipe/:id/edit">Edit Recipe</a>
+    <br></br>
+    <a href="/">Delete Recipe</a>
   </body>
-</head>
+
 
 </html>

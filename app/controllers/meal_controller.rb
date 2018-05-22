@@ -1,7 +1,8 @@
 class MealController < ApplicationController
 
-  get '/meals' do
-    erb :'/meals/plan'
+  get '/recipes' do
+    @user = current_user
+    erb :'/recipes'
   end
 
   get '/create_recipe' do
@@ -27,6 +28,26 @@ class MealController < ApplicationController
       redirect "/login"
     end
   end
+
+  get '/recipe/:id/edit' do
+    if session[:user_id]
+      @recipe = Meal.find_by_id(params[:id])
+      if @recipe.user_id == session[:user_id] then erb :'meals/edit_recipe' else redirect to '/user_home' end
+    else
+      redirect "/login"
+    end
+  end
+
+  patch '/recipe/:id' do
+   if params[:content] != ""
+     @recipe = Meal.find_by_id(params[:id])
+     @recipe.content = params[:content]
+     @recipe.save
+     redirect "/recipe/#{@recipe.id}"
+   else
+     redirect "/recipe/#{params[:id]}/edit"
+   end
+ end
 
 
 end

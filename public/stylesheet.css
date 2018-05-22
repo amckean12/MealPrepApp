@@ -1,0 +1,62 @@
+/* stylesheet.css */
+body {
+  background: url("assets/dinner-food-meal-8313.jpg");
+  background-repeat: no-repeat;
+   background-size: 1900px 900px;
+}
+
+#landing_page_title {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  font-family: 'Caveat', cursive;
+  font-size: 400%;
+  color: 2AE286;
+}
+
+#site_logline {
+  position: absolute;
+  top: 18%;
+  right: 15%;
+  font-family: 'Caveat', cursive;
+  font-size: 300%;
+  color: 2AE286;
+}
+
+#login_button {
+  position:absolute;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: 2AE286;
+  border: solid 2px;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 200%;
+  top: 40%;
+  right: 15%;
+}
+
+#login_button:hover {
+    background: ;
+    color: white;
+}
+
+#signup_button {
+  position: absolute;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: 2AE286;
+  border: solid 2px;
+  border-radius: 3px;
+  font-size: 200%;
+  transition: .4s;
+  top: 55%;
+  right: 15%;
+}
+
+#signup_button:hover {
+    background: 2AE286;
+    color: white;
+}
