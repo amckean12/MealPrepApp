@@ -157,3 +157,17 @@ h1.create_title {
   text-align:center;
   background: #f7f7f7;
 }
+
+.home_create_recipe_button{
+  position:absolute;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: 2AE286;
+  border: solid 2px;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 200%;
+  top: 40%;
+  right: 15%;
+}
