@@ -6,9 +6,12 @@
   <body>
     <h1><%=@recipe.name%></h1>
 
-    <a href="/recipe/:id/edit">Edit Recipe</a>
+    <p><a href="/recipe/<%= @recipe.id %>/edit">Edit Recipe</a></p>
     <br></br>
-    <a href="/">Delete Recipe</a>
+    <form method="post" action="/recipe/<%=@recipe.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete Recipe">
+    </form>
   </body>
 
 

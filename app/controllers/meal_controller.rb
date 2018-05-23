@@ -1,13 +1,18 @@
 class MealController < ApplicationController
 
   get '/recipes' do
-    @user = current_user
-    erb :'/recipes'
+    if logged_in?
+      @user = current_user
+      @recipes = Meal.all
+      erb :'/recipes'
+    else
+      redirect "/login"
+    end
   end
 
   get '/create_recipe' do
     @user = current_user
-    erb :'/meals/create_recipe'
+    if session[:user_id] then erb :"/meals/create_recipe" else   redirect to "/login" end
   end
 
   post '/recipe' do
@@ -32,7 +37,7 @@ class MealController < ApplicationController
   get '/recipe/:id/edit' do
     if session[:user_id]
       @recipe = Meal.find_by_id(params[:id])
-      if @recipe.user_id == session[:user_id] then erb :'meals/edit_recipe' else redirect to '/user_home' end
+      if @recipe.user_id == session[:user_id] then erb :'/meals/edit_recipe' else redirect to '/recipe' end
     else
       redirect "/login"
     end
@@ -48,6 +53,17 @@ class MealController < ApplicationController
      redirect "/recipe/#{params[:id]}/edit"
    end
  end
+
+ delete '/recipe/:id/delete' do
+    while session[:user_id]
+      @recipe = Meal.find_by_id(params[:id])
+      #Checks to make sure the tweet's user equals the session's user if so then we delete the tweet and direct back to the tweets route
+        if @recipe.user_id == session[:user_id] then @recipe.delete ; redirect "/user_home" end
+        redirect "/login" #the default redirect if user not logged in
+    end
+  end
+
+
 
 
 end
