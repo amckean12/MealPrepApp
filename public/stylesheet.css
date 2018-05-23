@@ -207,3 +207,21 @@ p.home_recipe_rating {
     top: 5%;
     right: 15%;
 }
+
+div.recipe_container {
+  position:absolute;
+  top: 20%;
+  left: 30%;
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 35%;
+  height: 50%;
+  opacity: 0.85;
+}
+
+h1.recipe_name_show {
+  top: 20%;
+  left: 30%;
+  color: #f7f7f7;
+}
