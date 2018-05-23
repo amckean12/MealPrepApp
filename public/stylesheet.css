@@ -171,3 +171,39 @@ h1.create_title {
   top: 40%;
   right: 15%;
 }
+
+div.sum_recipe_box {
+    overflow-y: scroll;
+    width: 50%;
+    height: 75%
+}
+
+.home_recipe_box {
+  border: 1px solid green ;
+  background: white;
+  opacity: 0.85;
+  padding: 0.3em 1em;
+  width: 85%;
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+.recipe_listed_name {
+  top: 10%;
+  left: 25%;
+  font-family: 'Caveat', cursive;
+  color: 2AE286;
+}
+
+.user_home_title {
+  top: 5%;
+  left: 10%;
+  font-family: 'Caveat', cursive;
+  font-size: 400%;
+  color: 2AE286;
+}
+
+p.home_recipe_rating {
+    top: 5%;
+    right: 15%;
+}

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_05_21_152151) do
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "content"
+    t.integer "rating"
     t.integer "user_id"
   end
 

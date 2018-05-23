@@ -20,7 +20,7 @@ class MealController < ApplicationController
      redirect "/create_recipe"
    else
      user = User.find_by_id(session[:user_id])
-     @recipe = Meal.create(:name => params[:name], :content => params[:content], :user_id => user.id)
+     @recipe = Meal.create(:name => params[:name], :content => params[:content], :rating => params[:rating], :user_id => user.id)
      redirect "/recipe/#{@recipe.id}"
    end
   end
@@ -47,6 +47,7 @@ class MealController < ApplicationController
    if params[:content] != ""
      @recipe = Meal.find_by_id(params[:id])
      @recipe.content = params[:content]
+     @recipe.rating = params[:rating]
      @recipe.save
      redirect "/recipe/#{@recipe.id}"
    else
@@ -62,8 +63,4 @@ class MealController < ApplicationController
         redirect "/login" #the default redirect if user not logged in
     end
   end
-
-
-
-
 end

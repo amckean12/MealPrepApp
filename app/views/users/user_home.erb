@@ -5,14 +5,18 @@
   <link rel="stylesheet" type="text/css" href="/stylesheet.css" />
 </head>
   <body>
-    <h1>Welcome Back, <%= @user.username %></h1>
+    <h1 class="user_home_title">Recipes for <%= @user.username %></h1>
     <a class="home_create_recipe_button" href="/create_recipe">Make A Recipe</a>
     <br><br>
-    <h2>Recipes</h2>
+    <div class="sum_recipe_box">
     <% @user.meals.each do |recipe| %>
-      <a href="/recipe/<%=recipe.id%>">Recipe Name: <%=recipe.name %></a>
+    <div class="home_recipe_box">
+      <a href="/recipe/<%=recipe.id%>"><h2 class="recipe_listed_name"><%=recipe.name %></h2></a>
+      <p class="home_recipe_rating"><%= recipe.rating %></p>
       <br></br>
+    </div>
       <% end %>
+    </div>
       <br></br>
   </body>
 </html>
