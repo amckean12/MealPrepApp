@@ -1,16 +1,26 @@
 class UserController < ApplicationController
 
   get '/login' do
-    erb :"/users/login"
+    if logged_in?
+       redirect to '/user_home'
+    else
+       erb :'/users/login'
+    end
   end
 
   get '/logout' do
-    session.clear
+    if logged_in?
+      session.clear
+    end
     redirect to '/'
   end
 
   get '/signup' do
-    erb :"/users/create_user"
+    if logged_in?
+      redirect to '/user_home'
+    else
+      erb :"/users/create_user"
+    end
   end
 
   post '/signup' do
