@@ -8,6 +8,7 @@
     <h1 class="user_home_title">Recipes for <%= @user.username %></h1>
     <a class="home_create_recipe_button" href="/create_recipe">Make A Recipe</a>
     <br><br>
+    <p class="error_text"><%= flash[:recipe_error] %></p>
     <div class="sum_recipe_box">
     <% @user.meals.each do |recipe| %>
     <div class="home_recipe_box">

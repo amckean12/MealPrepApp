@@ -305,3 +305,9 @@ h1.recipe_name_show {
 .edit_sub_button {
   background: #73AD21;
 }
+
+.error_text {
+  color: red;
+  text-align: center;
+  margin: 5%;
+}
