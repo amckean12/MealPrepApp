@@ -1,17 +1,18 @@
 <html>
 <head>
   <title><%=@recipe.name%></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/stylesheet.css" />
   </head>
   <body>
     <div class="recipe_container">
     <h1 class="recipe_name_show"><%=@recipe.name%></h1>
-
+    <h2><%= @recipe.content %></h2>
     <p><a href="/recipe/<%= @recipe.id %>/edit">Edit Recipe</a></p>
     <br></br>
-    <form method="post" action="/recipe/<%=@recipe.id%>/delete">
+    <form class="delete_recipe" method="post" action="/recipe/<%=@recipe.id%>/delete">
       <input id="hidden" type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete Recipe">
+       <button type="submit"><i class="fa fa-trash"></i></button>
     </form>
   </div>
   </body>

@@ -273,3 +273,35 @@ h1.recipe_name_show {
   width: 14%;
   text-align: center;
 }
+
+.delete_recipe {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 2%; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    top: 5%;
+    right: 5%;
+    width: 5%;
+}
+
+.edit_recipe_form {
+  position:absolute;
+  top: 20%;
+  left: 30%;
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 35%;
+  height: 60%;
+  opacity: 0.85;
+}
+
+.edit_recipe_title{
+  text-align: center;
+}
+
+.edit_sub_button {
+  background: #73AD21;
+}

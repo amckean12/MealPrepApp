@@ -1,22 +1,25 @@
 <html>
 <head>
   <title>Edit Recipe <%=@recipe.name%></title>
-  <link rel="stylesheet" type="text/css" href="/.css/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheet.css">
 </head>
   <body>
     <%=@recipe.name%>
-    <form action="/recipe/<%=@recipe.id%>" method="POST">
+    <form class="edit_recipe_form" action="/recipe/<%=@recipe.id%>" method="POST">
+      <h1 class="edit_recipe_title"><%=@recipe.name%></h1>
       <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <h2>Recipe</h2>
       <input type="text" value="<%=@recipe.content%>" name="content">
       <br></br>
+      <h2>Rating out of 5</h2>
       <div class="rating">
-        <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
-        <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
-        <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
-        <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
-        <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+        <span><input type="radio" name="rating" id="str5" value="5"><label for="str5">1</label></span>
+        <span><input type="radio" name="rating" id="str4" value="4"><label for="str4">2</label></span>
+        <span><input type="radio" name="rating" id="str3" value="3"><label for="str3">3</label></span>
+        <span><input type="radio" name="rating" id="str2" value="2"><label for="str2">4</label></span>
+        <span><input type="radio" name="rating" id="str1" value="1"><label for="str1">5</label></span>
       </div>
-      <input type="submit" value="Edit">
+      <input class="edit_sub_button" type="submit" value="Edit">
     </form>
     <br></br>
   </body>
